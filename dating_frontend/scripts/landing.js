@@ -1,4 +1,5 @@
 
+// animation sign up modal
 var modal = document.getElementById("sign_up_modal");
 var btn = document.getElementById("CreateAccount");
 var x_btn = document.getElementsByClassName("close")[0];
@@ -19,3 +20,13 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// variables
+const login_username = document.getElementById("login_username");
+const login_password = document.getElementById("login_password");
+const login_btn = document.getElementById("login_btn");
+
+// login
+login_btn.addEventListener("click" , () => {
+    dating_web.load_login(login_username.value, login_password.value);    
+})
