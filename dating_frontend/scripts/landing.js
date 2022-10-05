@@ -32,13 +32,22 @@ const signup_interested_in = document.getElementById("signup_interested_in");
 const signup_location = document.getElementById("location");
 const signup_password = document.getElementById("signup_password");
 const signup_btn = document.getElementById("signup_btn");
-const error = document.getElementById("error");
+const signup_error = document.getElementById("signup_error");
+const login_error = document.getElementById("login_error");
 let Latitude = "";
 let Longitude = "";
 
 // login
-login_btn.addEventListener("click" , () => {
-    dating_web.load_login(login_username.value, login_password.value);    
+login_btn.addEventListener("click" , async () => {
+    const object = await dating_web.login(login_username.value, login_password.value); 
+    if (object.status == "error") {
+        login_error.innerHTML = object.errors.split(".")[0];
+    }
+    else{
+        localStorage.setItem("id", object.user.id);
+        localStorage.setItem("token", object.authorisation.token);
+    }
+    
 })
 
 // get location
@@ -57,7 +66,7 @@ function getcoords(position) {
 }
 
 // signup
-signup_btn.addEventListener("click" , () => {
+signup_btn.addEventListener("click" , async () => {
     const data =  {
         "name" : signup_name.value,
         "username" : signup_username.value,
@@ -67,6 +76,18 @@ signup_btn.addEventListener("click" , () => {
         "Longitude" : Longitude.toString(),
         "password" : signup_password.value
     };
-    console.log(data);
-    dating_web.signup(data);    
+    const object = await dating_web.signup(data);
+    if (object.status == "error") {
+        if(object.errors.split(".")[0] == "The latitude field is required"){
+            signup_error.innerHTML = "The location is required";
+        }
+        else{
+            signup_error.innerHTML = object.errors.split(".")[0];
+        }
+    }
+    else {
+        localStorage.setItem("id", object.user.id);
+        localStorage.setItem("token", object.authorisation.token);
+            window.location.href = `home.html`;
+    }
 })

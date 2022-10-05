@@ -44,7 +44,7 @@ class AuthController extends Controller {
                 'status' => 'error',
                 // 'msg'    => 'Error',
                 'errors' => $exception->getMessage(),
-            ], 422);
+            ]);
         }
         
 

@@ -49,13 +49,15 @@ dating_web.login = async (username, password) => {
         "username" : username,
         "password" : password
     }
-    const response_landing = await dating_web.postAPI(landing_url, data);
-    dating_web.Console("Testing login API", response_landing.data);
+    const response_login = await dating_web.postAPI(landing_url, data);
+    dating_web.Console("Testing login API", response_login.data);
+    return response_login.data;
 }
 
 dating_web.signup = async (data) => {
     const landing_url = `${dating_web.baseURL}/register`;
-    const response_landing = await dating_web.postAPI(landing_url, data);
-    dating_web.Console("Testing login API", response_landing.data);
+    const response_signup = await dating_web.postAPI(landing_url, data);
+    // dating_web.Console("Testing signup API", response_signup.data);
+    return response_signup.data ;
 }
 
