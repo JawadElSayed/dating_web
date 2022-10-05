@@ -36,25 +36,26 @@
                     <div>
                         <form action="">
                             <label for="fullname" class="lable">Full Name:</label><br>
-                            <input type="text" placeholder="fullname" class="input"><br>
+                            <input id = "signup_name" type="text" placeholder="fullname" class="input"><br>
                             <label for="Username" class="lable">Username:</label><br>
-                            <input type="text" placeholder="username" class="input"><br>
+                            <input id = "signup_username" type="text" placeholder="username" class="input"><br>
                             <label for="Gender" class="choice_lable">Gender:</label>
                             <label for="interested in" class="lable">interested in:</label><br>
-                            <select name="Gender" id="Gender" class="drop">
+                            <select id = "signup_gender" name="Gender" class="drop">
                                 <option value="female">female</option>
                                 <option value="male">male</option>
                             </select>
-                            <select name="interested in" id="interested_in" class="drop">
+                            <select id = "signup_interested_in" name="interested in" class="drop">
                                 <option value="female">female</option>
                                 <option value="male">male</option>
                                 <option value="both">both</option>
                             </select><br>
-                            <input type="button" value="Location" class="location_btn"><br>
+                            <input id = "location" type="button" value="Location" class="location_btn"><br>
                             <label for="password" class="lable">password:</label><br>
-                            <input type="password" placeholder="password" class="input"><br>
+                            <input id = "signup_password" type="password" placeholder="password" class="input"><br>
+                            <p id = "error"></p>
                             <div class="btn_holder">
-                                <input type="submit" value="Sign Up" class="login_btn">
+                                <input id = "signup_btn" type="button" value="Sign Up" class="login_btn">
                             </div>
                         </form>
                     </div>

@@ -43,12 +43,18 @@ dating_web.loadFor = (page) => {
     eval("dating_web.load_" + page + "();");
 }
 
-dating_web.load_login = async (username, password) => {
+dating_web.login = async (username, password) => {
     const landing_url = `${dating_web.baseURL}/login`;
     const data =  {
         "username" : username,
         "password" : password
     }
+    const response_landing = await dating_web.postAPI(landing_url, data);
+    dating_web.Console("Testing login API", response_landing.data);
+}
+
+dating_web.signup = async (data) => {
+    const landing_url = `${dating_web.baseURL}/register`;
     const response_landing = await dating_web.postAPI(landing_url, data);
     dating_web.Console("Testing login API", response_landing.data);
 }
