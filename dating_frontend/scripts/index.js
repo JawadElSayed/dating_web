@@ -63,8 +63,14 @@ dating_web.signup = async (data) => {
 
 dating_web.users = async (token) => {
     const landing_url = `${dating_web.baseURL}/interested_in`;
-    const response_signup = await dating_web.postAPI(landing_url, 1, token);
-    // dating_web.Console("Testing users API", response_signup.data);
-    return response_signup.data ;
+    const response_interested_in = await dating_web.postAPI(landing_url, "", token);
+    // dating_web.Console("Testing users API", response_interested_in.data);
+    return response_interested_in.data ;
 }
 
+dating_web.messages = async (data, token) => {
+    const landing_url = `${dating_web.baseURL}/inbox`;
+    const response_inbox = await dating_web.postAPI(landing_url, data, token);
+    dating_web.Console("Testing inbox API", response_inbox.data);
+    return response_inbox.data ;
+}
