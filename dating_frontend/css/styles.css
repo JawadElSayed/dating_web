@@ -7,13 +7,12 @@
 /* landing page */
 
 /* login modal */
-body{
+.landin_page{
     background-image: url("../images/background1.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    
 }
 
 .login_modle{
@@ -65,6 +64,7 @@ body{
     color: black;
 }
 
+.search:hover,
 .input:hover {
     background-color: rgb(238, 234, 234);
 }
@@ -82,7 +82,7 @@ body{
     background-color: #FD6061;
     border-radius: 10px;
 }
-
+.btn:hover,
 .login_btn:hover {
     background-color: #df2929;
     cursor: pointer;
@@ -186,4 +186,68 @@ body{
 
 .error {
     color: red;
+}
+
+/* home */
+
+.home_page {
+    display: flex;
+}
+
+.left_part {
+    width: 25vw;
+    background-color:bisque;
+}
+
+.left_top {
+    padding-top: 2vh;
+    padding-left: 1vw;
+    background-color:rgb(215, 239, 250);
+}
+
+.left_btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw 2vh 0;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    background-color: #FD6061;
+    border-radius: 25px;
+}
+
+.search {
+    width: 92%;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 1.4vh;
+    margin-bottom: 2vh;
+}
+
+.users_bar {
+    overflow-y: scroll;
+    height: 86vh;
+}
+
+.one_user {
+    padding: 1vh 0 0 1vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* border: solid; */
+    border-bottom: solid #00000027;
+    box-sizing: 10px;
+}
+
+.user_img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.user_info {
+    padding-left: 1vw;
 }
