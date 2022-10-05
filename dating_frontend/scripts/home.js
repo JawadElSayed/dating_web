@@ -4,8 +4,8 @@ const id = localStorage.getItem("id");
 const token = localStorage.getItem("token");
 const users_bar = document.getElementById("users_bar");
 const messages_inbox = document.getElementById("messages");
-
-
+const send_btn = document.getElementById("send_btn");
+const messege_text = document.getElementById("message_input");
 
 
 
@@ -20,19 +20,31 @@ const getHome = async (token) => {
         let distance = user.distance.toFixed(2);
         all_users += adduser(user.id, user.profile_img, user.username, user.gender,distance);
     }
-    // console.log(all_users);
     users_bar.innerHTML = all_users;
     const list = document.querySelectorAll(".one_user")
 
+    let resever = "";
     for (let user of list){
-        // console.log(user.id)
         user.addEventListener("click", async () =>{
             const data = {
                 "id" : user.id,
             }
             messages(data, token)
+            resever = user.id;
         });
     }
+
+    send_btn.addEventListener("click", async () => {
+        if (messege_text.value != ""){
+            const data = {
+                "resever" : resever,
+                "message" : messege_text.value
+            }
+            await dating_web.send(data, token);
+            messege_text.value = "";
+        }
+    });
+    
 }
 
 // get messages 
@@ -48,7 +60,6 @@ const messages = async (data, token) => {
             all_messages += getchat("resever", message.message);
         }
     }
-    // console.log(all_messages);
     messages_inbox.innerHTML = all_messages;
 }
 
@@ -73,6 +84,10 @@ const getchat = (sender, message) => {
                         <p>${message}</p>
                     </div>`;
     return chat;
+}
+
+const sendMessage = async (sender, resever, message) => {
+
 }
 
 // console.log(token);

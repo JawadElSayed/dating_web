@@ -71,6 +71,13 @@ dating_web.users = async (token) => {
 dating_web.messages = async (data, token) => {
     const landing_url = `${dating_web.baseURL}/inbox`;
     const response_inbox = await dating_web.postAPI(landing_url, data, token);
-    dating_web.Console("Testing inbox API", response_inbox.data);
+    // dating_web.Console("Testing inbox API", response_inbox.data);
     return response_inbox.data ;
+}
+
+dating_web.send = async (data, token) => {
+    const landing_url = `${dating_web.baseURL}/send`;
+    const response_send = await dating_web.postAPI(landing_url, data, token);
+    // dating_web.Console("Testing send API", response_send.data);
+    return response_send.data ;
 }
