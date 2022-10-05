@@ -197,7 +197,7 @@
 
 .left_part {
     width: 25vw;
-    background-color:bisque;
+    background-color:#c4deff;
 }
 
 .left_top {
@@ -265,7 +265,7 @@
 }
 
 .head {
-    background-color: steelblue;
+    background-color: #c4deff;
     width: 71vw;
     display: flex;
     /* position: fixed; */

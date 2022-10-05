@@ -7,7 +7,7 @@ const messages_inbox = document.getElementById("messages");
 const send_btn = document.getElementById("send_btn");
 const messege_text = document.getElementById("message_input");
 const add_favorite = document.getElementById("add_favorite");
-
+const favorite = document.getElementById("favorite");
 
 
 
@@ -53,6 +53,18 @@ const getHome = async (token) => {
     });
     
 }
+
+// get favorites
+
+favorite.addEventListener("click", async () => {
+    const favorite = await dating_web.favorite(token);
+    let all_users = "";
+
+    for (let user of favorite.users){
+        all_users += adduser(user.id, user.profile_img, user.username, user.gender,"");
+    }
+    users_bar.innerHTML = all_users;
+})
 
 // get messages 
 const messages = async (data, token) => {

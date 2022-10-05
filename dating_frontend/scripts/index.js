@@ -89,9 +89,9 @@ dating_web.add_favorite = async (data, token) => {
     return response_add_favorite.data ;
 }
 
-dating_web.favorite = async (data, token) => {
+dating_web.favorite = async (token) => {
     const landing_url = `${dating_web.baseURL}/add_favorite`;
-    const response_favorite = await dating_web.postAPI(landing_url, data, token);
+    const response_favorite = await dating_web.postAPI(landing_url, "", token);
     dating_web.Console("Testing favorite API", response_favorite.data);
     return response_favorite.data ;
 }
