@@ -70,6 +70,7 @@ class AuthController extends Controller {
                 'Latitude' => $request->Latitude,
                 'Longitude' => $request->Longitude,
                 'password' => Hash::make($request->password),
+                'profile_img' => "../dating_server/images/default.png"
             ]);
     
             $token = Auth::login($user);

@@ -36,6 +36,7 @@ class HomeController extends Controller {
                     ->where('gender', $interest)
                     ->where('users.visible', 1)
                     ->whereNot('users.id', $id)
+                    ->select()
                     ->selectRaw("{$distance_cal} AS distance")
                     ->orderBy('distance')
                     ->get();
