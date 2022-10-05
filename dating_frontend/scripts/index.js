@@ -29,7 +29,7 @@ dating_web.postAPI = async (url, data, token = null) => {
             url,
             data,
             { headers:{
-                    'Authorization' : "token " + token
+                    'Authorization' : "Bearer " + token
                 }
             }
         );
@@ -58,6 +58,13 @@ dating_web.signup = async (data) => {
     const landing_url = `${dating_web.baseURL}/register`;
     const response_signup = await dating_web.postAPI(landing_url, data);
     // dating_web.Console("Testing signup API", response_signup.data);
+    return response_signup.data ;
+}
+
+dating_web.users = async (token) => {
+    const landing_url = `${dating_web.baseURL}/interested_in`;
+    const response_signup = await dating_web.postAPI(landing_url, 1, token);
+    // dating_web.Console("Testing users API", response_signup.data);
     return response_signup.data ;
 }
 
