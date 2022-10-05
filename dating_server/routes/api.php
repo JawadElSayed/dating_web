@@ -15,6 +15,7 @@ Route::group(["middleware" => "auth:api"],function(){
     Route::post("/add_favorite", [HomeController::class, "add_favorite"])->name("add-favorite");
     Route::post("/add_block", [HomeController::class, "add_block"])->name("add-block");
     Route::post("/search", [HomeController::class, "search"])->name("search");
+    Route::post("/send", [HomeController::class, "send_message"])->name("send");
 });
 
 Route::post("/register", [AuthController::class, "register"])->name("register");

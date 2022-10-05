@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -171,4 +172,21 @@ class HomeController extends Controller {
         ], 200);
     }
 
+    public function send_message(Request $request) {
+
+        $message = $request->message;
+        $resever = $request->resever;
+        $user_id = Auth::user()->id;
+
+        Message::create([
+            'sender_id' => $user_id,
+            'resever_id' => $resever,
+            'message' => $message
+        ]);
+        
+        return response()->json([
+            "status"=> "success",
+        ], 200);
+    }
+    
 }
