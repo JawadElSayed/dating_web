@@ -81,3 +81,17 @@ dating_web.send = async (data, token) => {
     // dating_web.Console("Testing send API", response_send.data);
     return response_send.data ;
 }
+
+dating_web.add_favorite = async (data, token) => {
+    const landing_url = `${dating_web.baseURL}/add_favorite`;
+    const response_add_favorite = await dating_web.postAPI(landing_url, data, token);
+    // dating_web.Console("Testing add_favorite API", response_add_favorite.data);
+    return response_add_favorite.data ;
+}
+
+dating_web.favorite = async (data, token) => {
+    const landing_url = `${dating_web.baseURL}/add_favorite`;
+    const response_favorite = await dating_web.postAPI(landing_url, data, token);
+    dating_web.Console("Testing favorite API", response_favorite.data);
+    return response_favorite.data ;
+}

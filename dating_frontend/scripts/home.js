@@ -6,7 +6,7 @@ const users_bar = document.getElementById("users_bar");
 const messages_inbox = document.getElementById("messages");
 const send_btn = document.getElementById("send_btn");
 const messege_text = document.getElementById("message_input");
-
+const add_favorite = document.getElementById("add_favorite");
 
 
 
@@ -43,6 +43,13 @@ const getHome = async (token) => {
             await dating_web.send(data, token);
             messege_text.value = "";
         }
+    });
+
+    add_favorite.addEventListener("click", async () => {
+            const data = {
+                "id" : resever,
+            }
+            await dating_web.add_favorite(data, token);
     });
     
 }
