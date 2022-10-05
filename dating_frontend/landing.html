@@ -8,57 +8,59 @@
         <title>Dating website</title>
     </head>
     <body>
-        <div class="login_modle">
-            <div class="login_cont">
-                <h2>Login</h2>
-                <form action="">
-                    <label for="Username" class="lable">Username:</label><br>
-                    <input id = "login_username" type="text" placeholder="username" class="input"><br>
-                    <label for="password" class="lable">password:</label><br>
-                    <input id = "login_password" type="password" placeholder="password" class="input"><br>
-                    <p id = "login_error" class="error"></p>
-                    <div class="btn_holder">
-                        <input id = "login_btn" type="button" value="Login" class="login_btn">
-                    </div>
-                </form>
-                <p id = "CreateAccount">Create Account</p>
+        <div class="landin_page">
+            <div class="login_modle">
+                <div class="login_cont">
+                    <h2>Login</h2>
+                    <form action="">
+                        <label for="Username" class="lable">Username:</label><br>
+                        <input id = "login_username" type="text" placeholder="username" class="input"><br>
+                        <label for="password" class="lable">password:</label><br>
+                        <input id = "login_password" type="password" placeholder="password" class="input"><br>
+                        <p id = "login_error" class="error"></p>
+                        <div class="btn_holder">
+                            <input id = "login_btn" type="button" value="Login" class="login_btn">
+                        </div>
+                    </form>
+                    <p id = "CreateAccount">Create Account</p>
+                </div>
             </div>
-        </div>
-         <!-- sign up Modal -->
-        <div id="sign_up_modal" class="modal">
+            <!-- sign up Modal -->
+            <div id="sign_up_modal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="signup-content">
-                    <div>
-                        <span class="close">&times;</span>
-                        <h2>Create Account</h2>
-                    </div>
-                    <div>
-                        <form action="">
-                            <label for="fullname" class="lable">Full Name:</label><br>
-                            <input id = "signup_name" type="text" placeholder="fullname" class="input"><br>
-                            <label for="Username" class="lable">Username:</label><br>
-                            <input id = "signup_username" type="text" placeholder="username" class="input"><br>
-                            <label for="Gender" class="choice_lable">Gender:</label>
-                            <label for="interested in" class="lable">interested in:</label><br>
-                            <select id = "signup_gender" name="Gender" class="drop">
-                                <option value="female">female</option>
-                                <option value="male">male</option>
-                            </select>
-                            <select id = "signup_interested_in" name="interested in" class="drop">
-                                <option value="female">female</option>
-                                <option value="male">male</option>
-                                <option value="both">both</option>
-                            </select><br>
-                            <input id = "location" type="button" value="Location" class="location_btn"><br>
-                            <label for="password" class="lable">password:</label><br>
-                            <input id = "signup_password" type="password" placeholder="password" class="input"><br>
-                            <p id = "signup_error" class="error"></p>
-                            <div class="btn_holder">
-                                <input id = "signup_btn" type="button" value="Sign Up" class="login_btn">
-                            </div>
-                        </form>
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="signup-content">
+                        <div>
+                            <span class="close">&times;</span>
+                            <h2>Create Account</h2>
+                        </div>
+                        <div>
+                            <form action="">
+                                <label for="fullname" class="lable">Full Name:</label><br>
+                                <input id = "signup_name" type="text" placeholder="fullname" class="input"><br>
+                                <label for="Username" class="lable">Username:</label><br>
+                                <input id = "signup_username" type="text" placeholder="username" class="input"><br>
+                                <label for="Gender" class="choice_lable">Gender:</label>
+                                <label for="interested in" class="lable">interested in:</label><br>
+                                <select id = "signup_gender" name="Gender" class="drop">
+                                    <option value="female">female</option>
+                                    <option value="male">male</option>
+                                </select>
+                                <select id = "signup_interested_in" name="interested in" class="drop">
+                                    <option value="female">female</option>
+                                    <option value="male">male</option>
+                                    <option value="both">both</option>
+                                </select><br>
+                                <input id = "location" type="button" value="Location" class="location_btn"><br>
+                                <label for="password" class="lable">password:</label><br>
+                                <input id = "signup_password" type="password" placeholder="password" class="input"><br>
+                                <p id = "signup_error" class="error"></p>
+                                <div class="btn_holder">
+                                    <input id = "signup_btn" type="button" value="Sign Up" class="login_btn">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
